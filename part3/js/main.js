@@ -97,16 +97,16 @@ window.WineView = Backbone.View.extend({
 			year: $('#year').val(),
 			description: $('#description').val()
 		});
-if (this.model.isNew()) {
-	var self = this;
-	app.wineList.create(this.model, {
-		success: function() {
-			app.navigate('wines/'+self.model.id, false);
+		if (this.model.isNew()) {
+			var self = this;
+			app.wineList.create(this.model, {
+				success: function() {
+					app.navigate('wines/'+self.model.id, false);
+				}
+			});
+		} else {
+			this.model.save();
 		}
-	});
-} else {
-	this.model.save();
-}
 		
 		return false;
 	},
@@ -146,10 +146,10 @@ window.HeaderView = Backbone.View.extend({
 		"click .new": "newWine"
     },
 
-newWine: function(event) {
-	app.navigate("wines/new", true);
-	return false;
-}
+	newWine: function(event) {
+		app.navigate("wines/new", true);
+		return false;
+	}
 });
 
 var AppRouter = Backbone.Router.extend({
@@ -186,7 +186,6 @@ var AppRouter = Backbone.Router.extend({
   	},
 
 	newWine: function() {
-		console.log('MyRouter newWine');
 		if (app.wineView) app.wineView.close();
 		app.wineView = new WineView({model: new Wine()});
 		app.wineView.render();
