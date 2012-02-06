@@ -1,0 +1,90 @@
+* {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
+
+.header {
+	position: absolute;
+ 	text-align: center;
+ 	background: #666666; /* for non-css3 browsers */
+	background: -webkit-gradient(linear, left top, left bottom, from(#4B0A1E), to(#4B0A1E), color-stop(.6,#BA8A92));
+	color: #FFFFFF;
+	top: 0px;
+    left: 0px;
+	height: 44px;
+	right: 0px;
+	border-bottom: solid 1px #444444;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.header h2 {
+    margin-top: 0px;
+    padding-top: 10px;
+}
+
+.header .nav {
+    padding-top: 12px;
+	position: absolute;
+	left: 12px;
+}
+
+.header > .action {
+	position: absolute;
+	right: 10px;
+}
+
+.header a {
+	text-decoration:none;
+	color: #FFFFFF;
+}
+
+.content {
+    position: absolute;
+    top: 44px;
+   	left: 0px;
+   	bottom: 0px;
+   	right: 0px;
+    overflow-y: scroll;
+}
+
+.details {
+    padding: 12px;
+}
+
+.content img {
+    float: right;
+    width: 100px;
+    height: 200px;
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 0px;
+	margin-top: 0px;
+}
+
+li a { 
+	text-decoration:none;
+	display: block;
+	color: #000000;
+	border-bottom:solid 1px #CCCCCC;
+	padding: 8px;
+}
+
+li a:hover {
+	background-color: #4B0A1E;
+	color: #BA8A92;
+}
+
+button {
+	padding:6px;
+}
