@@ -25,7 +25,8 @@ The UI is intentionally plain to keep the focus on the architecture of the appli
 
 ## Services: ##
 
-The application is available with a PHP or Java services.
+The application is available with a PHP or Java services:
+
 - The PHP services are available in the api directory of this repository. The RESTful services are implemented in PHP using the [Slim framework](http://www.slimframework.com/) (also included in the api directory).
 - The Java back-end is available in [this repository](https://github.com/ccoenraets/backbone-jax-cellar). The RESTful services are implemented in Java using JAX-RS.
 
