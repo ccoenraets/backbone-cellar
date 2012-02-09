@@ -3,7 +3,7 @@
 "Backbone Cellar" is a sample [Backbone.js](http://documentcloud.github.com/backbone/) application.
 The application allows you to browse through a list of wines, as well as add, update, and delete wines.
 
-"Backbone Cellar" is the application used in the four-part tutorial posted here ([part 1](http://coenraets.org/blog/2011/12/backbone-js-wine-cellar-tutorial-part-1-getting-started/), [part 2](http://coenraets.org/blog/2011/12/backbone-js-wine-cellar-tutorial-part-2-crud/), [part 3](http://coenraets.org/blog/2011/12/backbone-js-wine-cellar-tutorial-part-3-deep-linking-and-application-states/), [part 4](http://coenraets.org/blog/2012/01/backbone-js-lessons-learned-and-improved-sample-app/)).
+"Backbone Cellar" is the application used in the four-part tutorial posted here:[part 1](http://coenraets.org/blog/2011/12/backbone-js-wine-cellar-tutorial-part-1-getting-started/), [part 2](http://coenraets.org/blog/2011/12/backbone-js-wine-cellar-tutorial-part-2-crud/), [part 3](http://coenraets.org/blog/2011/12/backbone-js-wine-cellar-tutorial-part-3-deep-linking-and-application-states/), [part 4](http://coenraets.org/blog/2012/01/backbone-js-lessons-learned-and-improved-sample-app/).
 
 If you just want to look at the final version of the application, look in the [final](https://github.com/ccoenraets/backbone-cellar/tree/master/final) directory.
 
