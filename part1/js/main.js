@@ -1,59 +1,75 @@
+// Models
 window.Wine = Backbone.Model.extend();
 
 window.WineCollection = Backbone.Collection.extend({
-	model: Wine,
-	url: "api/wines"
+    model:Wine,
+    url:"../api/wines"
 });
 
 window.WineListView = Backbone.View.extend({
-	el: $('#wineList'),
-	initialize: function() {
-		this.model.bind("reset", this.render, this); 	
-	},
-    render: function(eventName) {
-		_.each(this.model.models, function(wine) {
-            $(this.el).append(
-				new WineListItemView({model: wine}).render().el);
-		}, this);
-		return this;
+
+    tagName:'ul',
+
+    initialize:function () {
+        this.model.bind("reset", this.render, this);
+    },
+
+    render:function (eventName) {
+        _.each(this.model.models, function (wine) {
+            $(this.el).append(new WineListItemView({model:wine}).render().el);
+        }, this);
+        return this;
     }
+
 });
 
+
+// Views
 window.WineListItemView = Backbone.View.extend({
-	tagName: "li",
-	template: _.template($('#wine-list-item').html()),
-    render: function(eventName) {
-		$(this.el).html(this.template(this.model.toJSON()));
-		return this;
+
+    tagName:"li",
+
+    template:_.template($('#tpl-wine-list-item').html()),
+
+    render:function (eventName) {
+        $(this.el).html(this.template(this.model.toJSON()));
+        return this;
     }
+
 });
 
 window.WineView = Backbone.View.extend({
-    el: $('#mainArea'),
-	template: _.template($('#wine-details').html()),
-    render: function(eventName) {
-		$(this.el).html(this.template(this.model.toJSON()));
-		return this;
+
+    template:_.template($('#tpl-wine-details').html()),
+
+    render:function (eventName) {
+        $(this.el).html(this.template(this.model.toJSON()));
+        return this;
     }
+
 });
 
+
+// Router
 var AppRouter = Backbone.Router.extend({
-	routes: {
-		""			: "list",
-		"wines/:id"	: "wineDetails"
-	},
 
-	list: function() {
-    	this.wineList = new WineCollection();
-    	this.wineListView = new WineListView({model: this.wineList});
-		this.wineList.fetch();
-  	},
+    routes:{
+        "":"list",
+        "wines/:id":"wineDetails"
+    },
 
-	wineDetails: function(id) {
-		this.wine = this.wineList.get(id);
-   		this.wineView = new WineView({model: this.wine});
-		this.wineView.render();
-  	}
+    list:function () {
+        this.wineList = new WineCollection();
+        this.wineListView = new WineListView({model:this.wineList});
+        this.wineList.fetch();
+        $('#sidebar').html(this.wineListView.render().el);
+    },
+
+    wineDetails:function (id) {
+        this.wine = this.wineList.get(id);
+        this.wineView = new WineView({model:this.wine});
+        $('#content').html(this.wineView.render().el);
+    }
 });
 
 var app = new AppRouter();
