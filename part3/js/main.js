@@ -191,9 +191,9 @@ var AppRouter = Backbone.Router.extend({
     },
 
     newWine:function () {
-        if (app.wineView) app.wineView.close();
-        app.wineView = new WineView({model:new Wine()});
-        $('#content').html(app.wineView.render().el);
+        if (this.wineView) this.wineView.close();
+        this.wineView = new WineView({model:new Wine()});
+        $('#content').html(this.wineView.render().el);
     }
 
 });
