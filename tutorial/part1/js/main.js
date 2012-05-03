@@ -6,6 +6,8 @@ window.WineCollection = Backbone.Collection.extend({
     url:"../api/wines"
 });
 
+
+// Views
 window.WineListView = Backbone.View.extend({
 
     tagName:'ul',
@@ -23,8 +25,6 @@ window.WineListView = Backbone.View.extend({
 
 });
 
-
-// Views
 window.WineListItemView = Backbone.View.extend({
 
     tagName:"li",

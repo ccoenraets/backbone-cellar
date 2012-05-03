@@ -112,7 +112,7 @@ function findByName($query) {
 		$stmt->execute();
 		$wines = $stmt->fetchAll(PDO::FETCH_OBJ);
 		$db = null;
-		echo '{"wine": ' . json_encode($wines) . '}';
+		echo json_encode($wines);
 	} catch(PDOException $e) {
 		echo '{"error":{"text":'. $e->getMessage() .'}}'; 
 	}
