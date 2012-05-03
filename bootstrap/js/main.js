@@ -46,7 +46,7 @@ var AppRouter = Backbone.Router.extend({
 
 });
 
-utils.loadTemplate(['HeaderView', 'WineView', 'WineListView', 'WineListItemView', 'AboutView'], function() {
+utils.loadTemplate(['HeaderView', 'WineView', 'WineListItemView', 'AboutView'], function() {
     app = new AppRouter();
     Backbone.history.start();
 });
