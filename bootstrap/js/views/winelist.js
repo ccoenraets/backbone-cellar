@@ -4,10 +4,10 @@ window.WineListView = Backbone.View.extend({
         this.render();
     },
 
-    render: function () {
+    render: function (options) {
         var wines = this.model.models;
         var len = wines.length;
-        var startPos = (this.options.page - 1) * 8;
+        var startPos = (options.page - 1) * 8;
         var endPos = Math.min(startPos + 8, len);
 
         $(this.el).html('<ul class="thumbnails"></ul>');
@@ -16,7 +16,7 @@ window.WineListView = Backbone.View.extend({
             $('.thumbnails', this.el).append(new WineListItemView({model: wines[i]}).render().el);
         }
 
-        $(this.el).append(new Paginator({model: this.model, page: this.options.page}).render().el);
+        $(this.el).append(new Paginator({model: this.model, page: options.page}).render().el);
 
         return this;
     }
